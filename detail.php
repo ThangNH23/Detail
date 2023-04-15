@@ -8,12 +8,12 @@ if (!$conn) {
     //Sử dụng mệnh đề LIKE ‘%$search_term%’ nó sẽ tìm bất kỳ giá trị nào bằng với $search_term
     $search_term = $_POST['search_term'];
     $sql = "SELECT * FROM products WHERE name LIKE '%$search_term%'";
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($conn, $sql); //sử dụng hàm mysqli_query() để thực thi truy vấn SQL và lưu kết quả vào biến $result.
   }
 ?>
 
 <!-- Hiển thị biểu mẫu tìm kiếm sản phẩm -->
-<form action="" method="post">
+<form action="page.php" method="post">
   <input type="text" name="search_term" placeholder="Tìm kiếm sản phẩm...">
   <button type="submit" name="submit">Tìm kiếm</button>
 </form>
